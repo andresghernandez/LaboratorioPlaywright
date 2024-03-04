@@ -1,5 +1,4 @@
 import { Locator, Page, expect } from "@playwright/test";
-import { Console } from "console";
 
 export class PaymentDetailsPage {
 
@@ -40,24 +39,22 @@ export class PaymentDetailsPage {
     }
 
     //VILLAS, BOGOTA, OCCIDENTE, POPULAR//ng-reflect-value
-    async selectBank(bank:string){
+    async selectBank(page:Page, bank:string){
 
         const rows = await this.bankRadioList.all()
         console.log(rows.length);
         
         for (let element of await this.bankRadioList.all()){
-            const value = element.getAttribute("ng-reflect-value").then.toString();
-            const value2 = element.inputValue();
+            const value = await element.getAttribute("ng-reflect-value");
             console.log("value: "+value);
-            console.log("value2: "+value2);
+
             if (value === bank){
                 await element.click();
                 break;
             }
         }
-
+        await page.screenshot({ path: 'Screenshots/screenshot4.png', fullPage: true });
         await this.payButton.click();
-
     }
 
 

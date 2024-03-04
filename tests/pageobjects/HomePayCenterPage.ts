@@ -21,6 +21,7 @@ export class HomePayCenterPage {
         await this.serviceTextBox.fill(service);
         await page.waitForTimeout(2000)
         await this.searchButton.click();
+        await page.screenshot({ path: 'Screenshots/screenshot0.png', fullPage: true });
         await this.payButton.click();
     }
 
