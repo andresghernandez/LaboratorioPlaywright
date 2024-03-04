@@ -10,7 +10,7 @@ export class HomePayCenterPage {
     constructor(page: Page){
         this.serviceTextBox = page.frameLocator("//iframe[@id='iframe-buscador']").locator("//input[@id='search']")
         this.searchButton = page.frameLocator("//iframe[@id='iframe-buscador']").locator("//div[@class='search__button']/img")
-        this.payButton =  page.frameLocator("//iframe[@id='iframe-buscador']").getByText("Pagar")
+        this.payButton =  page.frameLocator("//iframe[@id='iframe-buscador']").locator("//div[1]/div/a/p[contains(text(), 'Pagar')]")
     }
 
     async openPage(page: Page, url:string){
@@ -19,7 +19,7 @@ export class HomePayCenterPage {
 
     async searchService(page: Page, service:string){
         await this.serviceTextBox.fill(service);
-        await page.waitForTimeout(2000)
+        await page.waitForTimeout(3000)
         await this.searchButton.click();
         await page.screenshot({ path: 'Screenshots/screenshot0.png', fullPage: true });
         await this.payButton.click();

@@ -15,11 +15,11 @@ test('pay center', async ({ page }) => {
 
     await homePayCenterPage.searchService(page, "Vanti Sa Esp Gas Natural");
 
-    await payPage.paymentDetails(page, "63941179", "63941179", "6860", "pago recibo del servicio");
+    await payPage.paymentDetails(page, "63941179", "63941179", "Asociacion 5", "6860", "pago recibo del servicio");
 
     await payPage.acceptTerms(page);
 
-    await paymentDetailsPage.holderData("Cedula de Ciudadania", "1234567890", "Pedro Fernandez", 
+    await paymentDetailsPage.holderData(page, "Cedula de Ciudadania", "1234567890", "Pedro Fernandez", 
     "pruebapedrofernandez@gmail.com", "pruebapedrofernandez@gmail.com", "Colombia", "3280000000", "3280000000")
 
     await paymentDetailsPage.selectBank(page, "VILLAS");

@@ -26,8 +26,11 @@ export class PaymentDetailsPage {
         this.payButton = page.getByText("Pagar")
     }
 
-    async holderData(documentType:string, documentNumber:string, name:string, email:string, confirmEmail:string, country:string,
+    async holderData(page:Page, documentType:string, documentNumber:string, name:string, email:string, confirmEmail:string, country:string,
         mobile:string, confirmMobile:string){
+        await page.waitForTimeout(5000)
+        await expect(this.documentTypeSelect).toBeVisible();
+        await page.screenshot({ path: 'Screenshots/screenshot3.5.png', fullPage: true });
         await this.documentTypeSelect.selectOption(documentType)
         await this.documentNumberTextBox.fill(documentNumber)
         await this.nameTextBox.fill(name)
