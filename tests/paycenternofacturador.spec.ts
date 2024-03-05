@@ -28,6 +28,6 @@ test('pay center', async ({ page }) => {
     
     await bankVillasPage.successfullLogin(page);
 
-    await page.pause();
+    //await page.pause();
 
 });
