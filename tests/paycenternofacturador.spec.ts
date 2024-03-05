@@ -13,9 +13,9 @@ test('pay center', async ({ page }) => {
     
     await homePayCenterPage.openPage(page, "https://www.avalpaycenter.com/wps/portal/portal-de-pagos");
 
-    await homePayCenterPage.searchService(page, "Fundacion");
+    await homePayCenterPage.searchService(page, "Fundacion La Luz");
 
-    await payPage.paymentDetails(page, "1234567891", "1234567891",  "Asociacion 5",  "100000", "pago recibo del servicio");
+    await payPage.paymentDetails(page, "1234567892", "1234567892",  "Asociacion 5",  "100000", "pago recibo del servicio");
 
     await payPage.acceptTerms(page);
 
