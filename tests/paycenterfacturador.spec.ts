@@ -15,7 +15,7 @@ test('pay center', async ({ page }) => {
 
     await homePayCenterPage.searchService(page, "Vanti Sa Esp Gas Natural");
 
-    await payPage.paymentDetails(page, "63941179", "63941179", "Asociacion 5", "6860", "pago recibo del servicio");
+    await payPage.paymentDetails(page, "63941175", "63941175", "Asociacion 5", "6860", "pago recibo del servicio");
 
     await payPage.acceptTerms(page);
 
@@ -28,6 +28,6 @@ test('pay center', async ({ page }) => {
     
     await bankVillasPage.successfullLogin(page);
 
-    await page.pause();
+    //await page.pause();
 
 });

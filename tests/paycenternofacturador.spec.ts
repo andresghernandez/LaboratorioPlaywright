@@ -13,10 +13,10 @@ test('pay center', async ({ page }) => {
     
     await homePayCenterPage.openPage(page, "https://www.avalpaycenter.com/wps/portal/portal-de-pagos");
 
-    await homePayCenterPage.searchService(page, "Fundacion Fundarvir");
+    await homePayCenterPage.searchService(page, "Fundacion");
 
-    await payPage.paymentDetails(page, "1234567897", "1234567897",  "Asociacion 5",  "100000", "pago recibo del servicio");
-""
+    await payPage.paymentDetails(page, "1234567891", "1234567891",  "Asociacion 5",  "100000", "pago recibo del servicio");
+
     await payPage.acceptTerms(page);
 
     await paymentDetailsPage.holderData(page, "Cedula de Ciudadania", "1234567890", "Pedro Fernandez", 

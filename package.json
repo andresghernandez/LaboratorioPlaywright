@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "facturador:": "npx playwright test paycenterfacturador.spec.ts",
+    "nofacturador": "npx playwright test paycenternofacturador.spec.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.42.0",
-    "@types/node": "^20.11.24"
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.11.24",
+    "allure": "^0.0.0",
+    "allure-playwright": "^2.13.0"
   }
 }

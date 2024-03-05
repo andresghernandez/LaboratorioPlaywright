@@ -38,11 +38,12 @@ export class PayPage {
         await this.detailTextBox.fill(detail);
         await page.screenshot({ path: 'Screenshots/screenshot1.png', fullPage: true });
         await this.continueButton.click();
-        await page.waitForTimeout(3000)
+        await page.waitForTimeout(2000)
     }
 
     async acceptTerms(page:Page){
         await this.acceptTermsCheckbox.click()
+        await page.waitForTimeout(1000)
         await page.screenshot({ path: 'Screenshots/screenshot2.png', fullPage: true });
         await this.payButton.click();
         await page.waitForTimeout(5000)
